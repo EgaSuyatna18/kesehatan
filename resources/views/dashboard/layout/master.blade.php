@@ -45,6 +45,12 @@
                                     <div class="sb-nav-link-icon"><i class="fas fa-newspaper"></i></div>
                                     Artikel
                                 </a>
+                            @elseif (auth()->user()->akses == 'user')
+                                <div class="sb-sidenav-menu-heading">User</div>
+                                <a class="nav-link" href="/jantung">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-heart-pulse"></i></div>
+                                    Cek Jantung
+                                </a>
                             @endif
                         </div>
                     </div>

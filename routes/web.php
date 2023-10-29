@@ -23,6 +23,8 @@ use App\Http\Controllers\LPController;
 // });
 
 route::get('/', [LPController::class, 'index']);
+route::get('/home/artikel', [LPController::class, 'home_artikel']);
+route::get('/home/artikel/{artikel}', [LPController::class, 'home_artikel_detail']);
 
 Route::middleware(['auth'])->group(function () {
     route::get('/dashboard', [DashboardController::class, 'dashboard']);
@@ -32,9 +34,10 @@ Route::middleware(['auth'])->group(function () {
     route::get('/artikel/{artikel}/destroy', [DashboardController::class, 'artikel_destroy']);
     route::get('/artikel/{artikel}/edit', [DashboardController::class, 'artikel_edit']);
     route::put('/artikel/{artikel}', [DashboardController::class, 'artikel_update']);
+    route::get('/jantung', [LPController::class, 'jantung']);
 });
 
-route::get('/logout', function(Request $request) {
+route::get('/logout', function (Request $request) {
     Auth::logout();
     $request->session()->invalidate();
     $request->session()->regenerateToken();
