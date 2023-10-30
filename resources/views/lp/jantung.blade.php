@@ -123,10 +123,17 @@
                     </div>
                 </div>
                 <div class="media contact-info">
-                    <span class="contact-info__icon"><i class="fas fa-plus"></i></span>
+                    <span class="contact-info__icon"><i class="fa fa-plus"></i></span>
                     <div class="media-body">
                         <h3>Kolesterol</h3>
                         <p id="kolesterolR">-</p>
+                    </div>
+                </div>
+                <div class="media contact-info">
+                    <span class="contact-info__icon"><i class="fa fa-fire"></i></span>
+                    <div class="media-body">
+                        <h3>Merokok</h3>
+                        <p id="merokokR">-</p>
                     </div>
                 </div>
                 <div class="media contact-info p-4 text-center d-none border border-1 rounded" id="total">
@@ -206,7 +213,16 @@
             bmiR.innerHTML = 'error';
         }
 
-        skor += parseInt(tekananDarah.value) + parseInt(kolesterol.value)
+        darahR.innerHTML = tekananDarah.options[tekananDarah.selectedIndex].text + ' skor +' + tekananDarah.value
+        kolesterolR.innerHTML = kolesterol.options[kolesterol.selectedIndex].text + ' skor +' + kolesterol.value
+        skor += parseInt(tekananDarah.value) + parseInt(kolesterol.value);
+
+        if(merokok.checked) {
+            skor += 2;
+            merokokR.innerHTML = 'Perokok skor +2';
+        }else {
+            merokokR.innerHTML = 'Non-Perokok skor +0';
+        }
 
         total.classList.remove('d-none');
         if(skor < 5) {
@@ -221,7 +237,7 @@
         }
         
         
-        console.log(skor);
+        console.log(tekananDarah.options[tekananDarah.selectedIndex].text);
     });
 </script>
 @endsection

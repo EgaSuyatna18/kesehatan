@@ -43,7 +43,7 @@
                                     <a class="d-inline-block" href="/home/artikel/{{ $artikel->slug }}">
                                         <h2 class="blog-head" style="color: #2d2d2d;">{{ $artikel->judul }}</h2>
                                     </a>
-                                    <p>{!! substr($artikel->body, 0, 200) !!}...</p>
+                                    <p>{!! substr(trim($artikel->body, '<div></div>'), 0, 200) !!}...</p>
                                     <ul class="blog-info-link">
                                         <li><a href="#"><i class="fa fa-user"></i> {{ $artikel->user->name }}</a></li>
                                         <li><a href="#"><i class="fa fa-calendar"></i> {{ $artikel->created_at }}</a></li>

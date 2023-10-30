@@ -32,8 +32,10 @@ class LPController extends Controller
 
     function jantung()
     {
-        return view('lp.jantung', [
-            'title' => 'Cek Jantung'
-        ]);
+        return view('lp.jantung', ['title' => env('APP_NAME', 'Kesehatan') . ' | Cek Jantung']);
+    }
+
+    function about() {
+        return view('lp.about', ['title' => env('APP_NAME', 'Kesehatan') . ' | About']);
     }
 }

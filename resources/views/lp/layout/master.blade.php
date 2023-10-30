@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="/assets/hc/assets/css/style.css">
 </head>
 <body>
+    @include('sweetalert::alert')
     <!-- ? Preloader Start -->
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -46,7 +47,7 @@
                         <!-- Logo -->
                         <div class="col-xl-2 col-lg-2 col-md-1">
                             <div class="logo">
-                                <h1>{{ env('APP_NAME', 'Kesehatan') }}</h1>
+                                <h1><img src="/assets/hc/assets/img/logo/logo.png" style="width: 30px;" alt="">{{ env('APP_NAME', 'Kesehatan') }}</h1>
                             </div>
                         </div>
                         <div class="col-xl-10 col-lg-10 col-md-10">
@@ -56,10 +57,9 @@
                                     <nav> 
                                         <ul id="navigation">
                                             <li><a href="/">Home</a></li>
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="/jantung">Cek Jantung</a></li>
+                                            <li><a href="/about">About</a></li>
+                                            <li><a href="/jantung">Pitung</a></li>
                                             <li><a href="/home/artikel">Artikel</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -97,11 +97,10 @@
                                         <div class="main-menu main-menu2">
                                             <nav> 
                                                 <ul>
-                                                    <li><a href="index.html">Home</a></li>
-                                                    <li><a href="about.html">About</a></li>
-                                                    <li><a href="/jantung">Cek Jantung</a></li>
-                                                    <li><a href="/home/artikels">Artikel</a></li>
-                                                    <li><a href="contact.html">Contact</a></li>
+                                                    <li><a href="/">Home</a></li>
+                                                    <li><a href="/about">About</a></li>
+                                                    <li><a href="/jantung">Pitung</a></li>
+                                                    <li><a href="/home/artikel">Artikel</a></li>
                                                 </ul>
                                             </nav>
                                         </div>

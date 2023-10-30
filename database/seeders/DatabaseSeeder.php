@@ -27,6 +27,15 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('123')
         ]);
 
+        \App\Models\User::factory()->create([
+            'akses' => 'user',
+            'name' => 'User Test',
+            'email' => 'user@'. env('APP_NAME', 'kesehatan') .'.com',
+            'password' => Hash::make('123')
+        ]);
+
         \App\Models\Artikel::factory(10)->create();
+
+        \App\Models\CatatanKesehatan::factory(30)->create();
     }
 }

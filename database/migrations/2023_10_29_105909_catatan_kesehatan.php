@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('artikels', function (Blueprint $table) {
+        Schema::create('catatan_kesehatans', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('foto');
-            $table->string('judul');
-            $table->string('slug')->unique();
-            $table->text('body');
+            $table->integer('sbp');
+            $table->integer('dbp');
+            $table->integer('kolesterol');
+            $table->date('tanggal');
+            $table->string('status_tekanan_darah');
+            $table->string('status_kadar_kolesterol');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('artikels');
+        Schema::dropIfExists('catatan_kesehatans');
     }
 };

@@ -49,7 +49,11 @@
                                 <div class="sb-sidenav-menu-heading">User</div>
                                 <a class="nav-link" href="/jantung">
                                     <div class="sb-nav-link-icon"><i class="fas fa-heart-pulse"></i></div>
-                                    Cek Jantung
+                                    Pitung
+                                </a>
+                                <a class="nav-link" href="/catatan_kesehatan">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-notes-medical"></i></div>
+                                    Catatan Kesehatan
                                 </a>
                             @endif
                         </div>

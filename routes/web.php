@@ -25,6 +25,8 @@ use App\Http\Controllers\LPController;
 route::get('/', [LPController::class, 'index']);
 route::get('/home/artikel', [LPController::class, 'home_artikel']);
 route::get('/home/artikel/{artikel}', [LPController::class, 'home_artikel_detail']);
+route::get('/jantung', [LPController::class, 'jantung']);
+route::get('/about', [LPController::class, 'about']);
 
 Route::middleware(['auth'])->group(function () {
     route::get('/dashboard', [DashboardController::class, 'dashboard']);
@@ -34,7 +36,10 @@ Route::middleware(['auth'])->group(function () {
     route::get('/artikel/{artikel}/destroy', [DashboardController::class, 'artikel_destroy']);
     route::get('/artikel/{artikel}/edit', [DashboardController::class, 'artikel_edit']);
     route::put('/artikel/{artikel}', [DashboardController::class, 'artikel_update']);
-    route::get('/jantung', [LPController::class, 'jantung']);
+    route::get('/catatan_kesehatan', [DashboardController::class, 'catatan_kesehatan']);
+    route::post('/catatan_kesehatan', [DashboardController::class, 'catatan_kesehatan_store']);
+    route::get('/catatan_kesehatan/{catatan_kesehatan}', [DashboardController::class, 'catatan_kesehatan_destroy']);
+    route::put('/catatan_kesehatan/{catatan_kesehatan}', [DashboardController::class, 'catatan_kesehatan_update']);
 });
 
 route::get('/logout', function (Request $request) {

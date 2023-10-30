@@ -38,7 +38,7 @@
        <li><a href="#"><i class="fa fa-calendar"></i> {{ $artikel->created_at }}</a></li>
      </ul>
      <p class="excert">
-       {!! $artikel->body !!}
+       {!! trim($artikel->body, '<div></div>') !!}
      </p>
  </div>
 </div>
